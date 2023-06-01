@@ -1,0 +1,15 @@
+Open powershell, run
+
+wsl -d docker-desktop
+then
+
+sysctl -w vm.max_map_count=262144
+
+http://localhost:9200/_cat/nodes?v&h=name,node.role&s=name
+
+m: master node
+s: content tier
+h: hot data tier
+w: warm data tier
+c: cold data tier
+f: frozen data tier

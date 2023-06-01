@@ -1,0 +1,65 @@
+dn: dc=example,dc=com
+objectClass: domain
+objectClass: top
+dc: example
+
+dn: ou=Users,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+dn: ou=Groups,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: Groups
+
+dn: cn=Joe Bloggs,ou=Users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Joe Bloggs
+sn: Bloggs
+ou: site_author
+description: 19650324000000Z
+employeeNumber: 9
+givenName: Joe
+mail: joe@example.com
+telephoneNumber: 169-637-3314
+telephoneNumber: 907-547-9114
+uid: jbloggs
+userPassword:: abc
+
+dn: cn=Jane Doe,ou=Users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Jane Doe
+sn: Doe
+ou: site_admin
+description: 19650324000000Z
+employeeNumber: 12
+givenName: Jane
+mail: jane@example.com
+telephoneNumber: 169-637-3314
+telephoneNumber: 907-547-9114
+uid: jdoe
+userPassword:: abc
+
+dn: cn=John Wick,ou=Users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: John Wick
+sn: Wick
+ou: site_reviewer
+description: 19650324000000Z
+employeeNumber: 8
+givenName: John
+mail: john@example.com
+telephoneNumber: 169-637-3314
+telephoneNumber: 907-547-9114
+uid: jwick
+userPassword:: abc
