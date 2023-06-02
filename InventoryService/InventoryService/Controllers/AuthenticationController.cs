@@ -131,11 +131,12 @@ namespace InventoryService.Controllers
         private JwtSecurityToken GetToken(List<Claim> authClaims)
         {
 
-            Dictionary<string, Object> data = new VaultConfiguration(_configuration)
-    .GetConfigurations("jwtsecret").Result;
+    //        Dictionary<string, Object> data = new VaultConfiguration(_configuration)
+    //.GetConfigurations("jwtsecret").Result;
 
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.
-                GetBytes(data["key"].ToString()));
+                GetBytes(_configuration["JWT:Secret"]));
+                //GetBytes(data["key"].ToString()));
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:ValidIssuer"],

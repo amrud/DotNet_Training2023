@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  inventoryservice:
+    image: ${DOCKER_REGISTRY-}inventoryservice
+    build:
+      context: .
+      dockerfile: InventoryService/Dockerfile
+    depends_on:
+      - sqlserverinsservice
+  sqlserverinsservice:
+    image: mcr.microsoft.com/mssql/server
+    hostname: 'sqlserverinsservice'
+    environment:
+        ACCEPT_EULA: 'Y'
+        SA_PASSWORD: 'Vignesh@95'
+    volumes:
+    - ./invapi:/var/opt/mssql/data
+    ports:
+    - '1406:1433'
+    expose:
+    - 1406
